@@ -41,6 +41,8 @@
             this.txtAPaterno = new System.Windows.Forms.TextBox();
             this.DTP_Fecha = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -59,8 +61,6 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Consulta)).BeginInit();
@@ -185,6 +185,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(764, 50);
             this.panel1.TabIndex = 13;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(46, 10);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(36, 23);
+            this.txtId.TabIndex = 21;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(12, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(25, 19);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "ID";
             // 
             // label8
             // 
@@ -344,24 +362,6 @@
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(12, 13);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(25, 19);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "ID";
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(46, 10);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(36, 23);
-            this.txtId.TabIndex = 21;
             // 
             // Form1
             // 

@@ -78,6 +78,8 @@ namespace CrudCoppel
             this.txtDomicilio.Clear();
             this.txtTelefono.Clear();
             this.DTP_Fecha.ResetText();
+            this.usuario.id = -1;
+            this.DGV_Consulta.ClearSelection();
         }
         private void CargarTextBox()
         {
@@ -166,6 +168,7 @@ namespace CrudCoppel
                 this.DTP_Fecha.Value = DateTime.ParseExact(fila.Cells["FechaNacimiento"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 this.txtDomicilio.Text = Convert.ToString(fila.Cells["Docimicilio"].Value);
                 this.txtTelefono.Text = Convert.ToString(fila.Cells["Telefono"].Value);
+                CargarTextBox();
             }
             catch(Exception ex)
             {
@@ -197,11 +200,11 @@ namespace CrudCoppel
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(usuario.id == 0)
+            if (usuario.id == -1)
             {
                 return;
             }
-            
+
             if (MessageBox.Show("¿Desea Eliminar el Usuario?","Eliminar Usuario",
                 MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
