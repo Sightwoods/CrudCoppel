@@ -28,7 +28,8 @@ namespace CrudCoppel
                         "usuario_id LIKE '%" + filtro + "%' OR " +
                         "nombre LIKE '%" + filtro + "%' OR " +
                         "apellido_paterno LIKE '%" + filtro + "%' OR " +
-                        "apellido_materno LIKE '%" + filtro + "%';";
+                        "apellido_materno LIKE '%" + filtro + "%' OR " +
+                        "telefono LIKE '%" + filtro +"%';";
                 }
                 MySqlCommand command = new MySqlCommand(Query);
                 command.Connection = conexionMySql.GetConnection();
