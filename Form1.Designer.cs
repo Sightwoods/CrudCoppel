@@ -193,6 +193,7 @@
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(36, 23);
             this.txtId.TabIndex = 21;
+            this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
