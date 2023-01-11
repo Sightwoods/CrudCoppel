@@ -31,7 +31,8 @@ namespace CrudCoppel
                     user[i].apellido_materno,
                     user[i].fecha_nacimiento.ToString("dd/MM/yyyy"),
                     user[i].domicilio,
-                    user[i].telefono
+                    user[i].telefono,
+                    user[i].estado
                     );
             }
         }
@@ -46,6 +47,10 @@ namespace CrudCoppel
             try
             {
                 if (!ValidarDatos())
+                {
+                    return;
+                }
+                if (!this.txtId.Text.Trim().Equals(""))
                 {
                     return;
                 }
@@ -80,6 +85,7 @@ namespace CrudCoppel
             this.DTP_Fecha.ResetText();
             this.usuario.id = -1;
             this.DGV_Consulta.ClearSelection();
+            this.txtEstado.Clear();
         }
         private void CargarTextBox()
         {
@@ -90,6 +96,7 @@ namespace CrudCoppel
             this.usuario.fecha_nacimiento = this.DTP_Fecha.Value;
             this.usuario.domicilio = this.txtDomicilio.Text.Trim();
             this.usuario.telefono = this.txtTelefono.Text.Trim();
+            this.usuario.estado = this.txtEstado.Text.Trim();
         }
         private int ObtenerId()
         {
@@ -130,6 +137,11 @@ namespace CrudCoppel
                 MessageBox.Show("Ingrese el Telefono.");
                 return false;
             }
+            if (this.txtEstado.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Ingrese el Estado.");
+                return false;
+            }
             return true;
         }
 
@@ -168,6 +180,7 @@ namespace CrudCoppel
                 this.DTP_Fecha.Value = DateTime.ParseExact(fila.Cells["FechaNacimiento"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 this.txtDomicilio.Text = Convert.ToString(fila.Cells["Docimicilio"].Value);
                 this.txtTelefono.Text = Convert.ToString(fila.Cells["Telefono"].Value);
+                this.txtEstado.Text = Convert.ToString(fila.Cells["Estado"].Value);
                 CargarTextBox();
             }
             catch(Exception ex)

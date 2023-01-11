@@ -15,5 +15,7 @@ namespace CrudCoppel
         public DateTime fecha_nacimiento { get; set; }
         public string domicilio { get; set; }
         public string telefono { get; set; }
+
+        public string estado { get; set; }
     }
 }

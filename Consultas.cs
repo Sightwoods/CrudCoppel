@@ -45,6 +45,7 @@ namespace CrudCoppel
                     DGV_user.fecha_nacimiento = mySqlDataReader.GetDateTime("fecha_nacimiento");
                     DGV_user.domicilio = mySqlDataReader.GetString("domicilio");
                     DGV_user.telefono = mySqlDataReader.GetString("telefono");
+                    DGV_user.estado = mySqlDataReader.GetString("estado");
                     usuarios.Add(DGV_user);
                 }
                 mySqlDataReader.Close();
@@ -59,8 +60,8 @@ namespace CrudCoppel
         internal bool AddUser(Usuarios usuario)
         {
             string insert =
-                "INSERT INTO usuarios (nombre,apellido_paterno, apellido_materno,fecha_nacimiento,domicilio,telefono) " +
-                "VALUES (@nombre,@apellido_paterno,@apellido_materno,@fecha_nacimiento,@domicilio,@telefono)";
+                "INSERT INTO usuarios (nombre,apellido_paterno, apellido_materno,fecha_nacimiento,domicilio,telefono,estado) " +
+                "VALUES (@nombre,@apellido_paterno,@apellido_materno,@fecha_nacimiento,@domicilio,@telefono,@estado)";
             MySqlCommand command = new MySqlCommand(insert,conexionMySql.GetConnection());
             command.Parameters.Add(new MySqlParameter("@nombre",usuario.nombre));
             command.Parameters.Add(new MySqlParameter("@apellido_paterno", usuario.apellido_paterno));
@@ -68,6 +69,7 @@ namespace CrudCoppel
             command.Parameters.Add(new MySqlParameter("@fecha_nacimiento", usuario.fecha_nacimiento));
             command.Parameters.Add(new MySqlParameter("@domicilio", usuario.domicilio));
             command.Parameters.Add(new MySqlParameter("@telefono", usuario.telefono));
+            command.Parameters.Add(new MySqlParameter("@estado",usuario.estado));
             return command.ExecuteNonQuery() > 0;
         }
 

@@ -61,6 +61,9 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Consulta)).BeginInit();
@@ -255,7 +258,8 @@
             this.ApellidoMaterno,
             this.FechaNacimiento,
             this.Docimicilio,
-            this.Telefono});
+            this.Telefono,
+            this.Estado});
             this.DGV_Consulta.Location = new System.Drawing.Point(12, 329);
             this.DGV_Consulta.Name = "DGV_Consulta";
             this.DGV_Consulta.RowTemplate.Height = 25;
@@ -364,11 +368,36 @@
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(532, 155);
+            this.txtEstado.MaxLength = 15;
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(166, 23);
+            this.txtEstado.TabIndex = 22;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(431, 155);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 19);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Estado";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 648);
+            this.Controls.Add(this.txtEstado);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.DGV_Consulta);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
@@ -436,5 +465,8 @@
         private Label label8;
         private TextBox txtId;
         private Label label9;
+        private TextBox txtEstado;
+        private Label label10;
+        private DataGridViewTextBoxColumn Estado;
     }
 }
